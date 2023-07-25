@@ -1,0 +1,70 @@
+/* Lataa Muli-fontti Google Fontsista */
+@import url('https://fonts.googleapis.com/css2?Muli&display=swap');
+
+/* Aseta laatikoiden rajat mukaan lukien */
+*{
+    box-sizing: border-box;
+}
+
+/* Tyylittele sivun runko */
+body{
+    font-family: 'Muli', sans-serif;
+    margin: 0;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    overflow:hidden;
+}
+
+/* Aseta kontainerin tyyli */
+.container{
+    display:flex;
+    width:90vw;
+}
+
+/* Aseta panel-elementin tyyli */
+.panel{
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height:80vh;
+    border-radius: 50px;
+    flex:0.5;
+    position:relative;
+    transition: flex 0.5s ease-in;
+    color:#fff;
+    cursor:pointer;
+    margin:10px;
+}
+
+/* Aseta paneelin otsikon tyyli */
+.panel h3{
+    position:absolute;
+    bottom:20px;
+    left:20px;
+    opacity:0;
+}
+
+/* Aseta aktiivisen paneelin tyyli */
+.panel.active{
+    flex:5;
+}
+
+/* Aseta aktiivisen paneelin otsikon tyyli */
+.panel.active h3{
+    opacity:1;
+     transition: opacity 0.4s ease-in 0.4s;
+}
+
+/* Aseta tyyli mobiiliresoluutiolle (enintään 480 pikseliä leveä) */
+@media(max-width:480px){
+    .container{
+        width:100vw;
+    }
+
+     /* Piilota neljäs ja viides paneeli mobiiliresoluutiolla */
+    .panel:nth-of-type(4),.panel:nth-of-type(5){
+        display:none;
+    }
+}
